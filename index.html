@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профессиональная Главная Страница</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Подключение Font Awesome для иконок -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Подключение Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Подключение AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .navbar {
+            background-color: #343a40;
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f8f9fa;
+        }
+        .navbar-nav .nav-link {
+            color: #f8f9fa;
+            transition: color 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffc107;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .search-bar input[type="text"] {
+            width: 80%;
+            max-width: 300px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+        .hero {
+            background-image: url('https://www.example.com/banner.jpg'); /* Замените на URL вашего баннера */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f8f9fa;
+            text-align: center;
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+        }
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .section {
+            padding: 40px 20px;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #343a40;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: scale(1.02);
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product-button {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .product-button:hover {
+            background-color: #0056b3;
+        }
+        .testimonial {
+            background-color: #ffc107;
+            color: #343a40;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #ffc107;
+            margin: 0 10px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #f8f9fa;
+        }
+        .category-bar {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        .category-bar:hover {
+            background-color: #0056b3;
+        }
+        .category-content {
+            display: none;
+            background-color: #f8f9fa;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .category-button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .category-button:hover {
+            background-color: #0056b3;
+        }
+        .license-info {
+            color: #ffc107;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .license-info:hover {
+            color: #f8f9fa;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            .section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Логотип</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">О нас</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Услуги</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Галерея</a></li>
+                <li class="nav-item"><a class="nav-link" href="#testimonials">Отзывы</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Поисковая строка -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Поиск...">
+        <button onclick="performSearch()">Поиск</button>
+    </div>
+    <!-- Главный баннер -->
+    <div class="hero" data-aos="fade-up">
+        <div>
+            <h1>Добро пожаловать в наш магазин</h1>
+            <p>Лучшие товары и услуги для вас</p>
+            <a href="#gallery" class="btn btn-warning btn-lg">Узнать больше</a>
+        </div>
+    </div>
+    <!-- Галерея -->
+    <div class="section" id="gallery" data-aos="fade-up">
+        <h2>Галерея</h2>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="Продукт 1">
+                    <a href="product-page1.html" class="product-button">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="Продукт 2">
+                    <a href="product-page2.html" class="product-button">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="Продукт 3">
+                    <a href="product-page3.html" class="product-button">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="Продукт 4">
+                    <a href="product-page4.html" class="product-button">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="Продукт 5">
+                    <a href="product-page5.html" class="product-button">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="Продукт 6">
+                    <a href="product-page6.html" class="product-button">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="Продукт 7">
+                    <a href="product-page7.html" class="product-button">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="Продукт 8">
+                    <a href="product-page8.html" class="product-button">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="Продукт 9">
+                    <a href="product-page9.html" class="product-button">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- О нас -->
+    <div class="section" id="about" data-aos="fade-right">
+        <h2>О нас</h2>
+        <p>Мы — команда профессионалов, стремящихся предоставить нашим клиентам лучшие продукты и услуги. Наш интернет-магазин специализируется на продаже высококачественных товаров, которые удовлетворяют потребности самых требовательных покупателей.</p>
+        <a href="product-page2.html" class="product-button">Подробнее</a>
+    </div>
+    <!-- Услуги -->
+    <div class="section bg-light" id="services" data-aos="fade-left">
+        <h2>Наши услуги</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Быстрая доставка</h3>
+                <p>Мы гарантируем оперативную доставку в любой регион, чтобы вы могли насладиться покупкой как можно скорее.</p>
+                <a href="product-page3.html" class="product-button">Подробнее</a>
+            </div>
+            <div class="col-md-4">
+                <h3>Круглосуточная поддержка</h3>
+                <p>Наша служба поддержки доступна 24/7, чтобы помочь вам с любыми вопросами и проблемами.</p>
+                <a href="product-page4.html" class="product-button">Подробнее</a>
+            </div>
+            <div class="col-md-4">
+                <h3>Широкий ассортимент</h3>
+                <p>Мы предлагаем широкий ассортимент товаров, включая электронику, одежду, аксессуары и многое другое.</p>
+                <a href="product-page0.html" class="product-button">Подробнее</a>
+            </div>
+        </div>
+    </div>
+    <!-- Отзывы -->
+    <div class="section bg-light" id="testimonials" data-aos="fade-right">
+        <h2>Отзывы клиентов</h2>
+        <div class="testimonial">
+            <p>"Отличный магазин! Быстрая доставка и качественные товары." - Иван И.</p>
+        </div>
+        <div class="testimonial">
+            <p>"Покупаю здесь регулярно, всегда доволен сервисом." - Мария П.</p>
+        </div>
+    </div>
+    <!-- Футер -->
+    <div class="footer" id="contact">
+        <p>Мы в социальных сетях:</p>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <p>
+            <a href="license-page.html" class="license-info">
+                &copy; [Название магазина] 2024 | Лицензия №123456789 | <i class="fas fa-certificate"></i>
+            </a>
+        </p>
+    </div>
+    <!-- Подключение jQuery, Bootstrap JS и AOS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+        function toggleCategoryContent() {
+            var content = document.getElementById('categoryContent');
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        }
+        function performSearch() {
+            var query = document.getElementById('searchInput').value;
+            alert('Поиск по запросу: ' + query);
+            // Здесь вы можете добавить логику для выполнения поиска
+        }
+    </script>
+</body>
+</html>

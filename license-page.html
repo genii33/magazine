@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лицензия</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .license-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            text-align: justify;
+            text-indent: 40px;
+        }
+        .license-box h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .license-box p {
+            margin-bottom: 15px;
+        }
+        .logo {
+            width: 80px;
+            position: absolute;
+            top: -40px;
+            left: calc(50% - 40px);
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .seal {
+            width: 120px;
+            position: absolute;
+            bottom: -20px;
+            right: 20px;
+            opacity: 0.5;
+        }
+        .signature {
+            margin-top: 30px;
+            text-align: right;
+            font-style: italic;
+        }
+        @media (max-width: 576px) {
+            .license-box {
+                padding: 20px;
+                text-indent: 20px;
+            }
+            .logo {
+                width: 60px;
+                top: -30px;
+                left: calc(50% - 30px);
+            }
+            .seal {
+                width: 100px;
+                bottom: -15px;
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="license-box">
+            <img src="https://www.example.com/logo.png" alt="Логотип компании" class="logo"> <!-- Замените на URL вашего логотипа -->
+            <h1>Лицензия</h1>
+            <p><strong>Название компании:</strong> ТОО "Ваш Магазин"</p>
+            <p><strong>Регистрационный номер:</strong> 123456789</p>
+            <p><strong>Дата выдачи лицензии:</strong> 01 января 2023 года</p>
+            <p><strong>Срок действия лицензии:</strong> до 31 декабря 2023 года</p>
+            <p><strong>Контактная информация:</strong></p>
+            <ul>
+                <li>Адрес: ул. Примерная, д. 1, г. Алматы</li>
+                <li>Телефон: +7 (727) 123-45-67</li>
+                <li>Email: info@example.kz</li>
+            </ul>
+            <p><strong>Описание деятельности:</strong> ТОО "Ваш Магазин" занимается розничной продажей электроники и бытовой техники на территории Республики Казахстан. Компания предоставляет широкий ассортимент высококачественных товаров от ведущих мировых производителей, гарантируя надежность и долговечность продукции.</p>
+            <p><strong>Орган, выдавший лицензию:</strong> Министерство торговли Республики Казахстан</p>
+            <p><strong>Юридическая ответственность:</strong> Компания несет ответственность за качество предоставляемых товаров и услуг в соответствии с законодательством Республики Казахстан. В случае возникновения претензий, потребители могут обратиться в органы по защите прав потребителей.</p>
+            <p><strong>Специальные условия:</strong> Лицензия действительна только на территории Республики Казахстан и не подлежит передаче третьим лицам без согласия выдавшего органа.</p>
+            <div class="signature">
+                <p>Подпись: Иванов И.И.</p>
+                <p>Должность: Генеральный директор</p>
+            </div>
+            <img src="https://stamps.kz/wp-content/uploads/2017/12/ip_01.iip_.jpg" alt="Печать" class="seal"> <!-- Замените на URL изображения печати -->
+        </div>
+    </div>
+    <!-- Подключение Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
